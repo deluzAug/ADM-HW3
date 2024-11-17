@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e77d79a4b049970c6dbe29ddf5f139af {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e77d79a4b049970c6dbe29ddf5f139af" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e77d79a4b049970c6dbe29ddf5f139af = L.map(
+                "map_e77d79a4b049970c6dbe29ddf5f139af",
+                {
+                    center: [41.9028, 12.4964],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_80b2eabbeac44ba540f23aebd8bc61e9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_80b2eabbeac44ba540f23aebd8bc61e9.addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var marker_babe19bbecbcc19a303c6450d6157843 = L.marker(
+                [45.46829, 9.1519461],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_e33702262e8f2410c043ce1daf93952d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_babe19bbecbcc19a303c6450d6157843.setIcon(icon_e33702262e8f2410c043ce1daf93952d);
+        
+    
+        var popup_346863f72a9c161165c1402e974df83d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4fb01c039a68d4c2c28c64560929bb9c = $(`<div id="html_4fb01c039a68d4c2c28c64560929bb9c" style="width: 100.0%; height: 100.0%;">Ba Restaurant<br>Price: €€€<br>Cuisine: Chinese,  Asian Contemporary</div>`)[0];
+                popup_346863f72a9c161165c1402e974df83d.setContent(html_4fb01c039a68d4c2c28c64560929bb9c);
+            
+        
+
+        marker_babe19bbecbcc19a303c6450d6157843.bindPopup(popup_346863f72a9c161165c1402e974df83d)
+        ;
+
+        
+    
+    
+            var marker_f600808c80f2b939214b7076c71992c1 = L.marker(
+                [40.8500528, 17.1226182],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_3d463b6c78bc52615947139a2823cc5d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f600808c80f2b939214b7076c71992c1.setIcon(icon_3d463b6c78bc52615947139a2823cc5d);
+        
+    
+        var popup_b763b2f04571601bd09d5dad283ba807 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ff9feb088ffa2483f24948c73368d59 = $(`<div id="html_6ff9feb088ffa2483f24948c73368d59" style="width: 100.0%; height: 100.0%;">Angelo Sabatelli<br>Price: €€€<br>Cuisine: Country cooking,  Asian Influences</div>`)[0];
+                popup_b763b2f04571601bd09d5dad283ba807.setContent(html_6ff9feb088ffa2483f24948c73368d59);
+            
+        
+
+        marker_f600808c80f2b939214b7076c71992c1.bindPopup(popup_b763b2f04571601bd09d5dad283ba807)
+        ;
+
+        
+    
+    
+            var marker_4f008221d66d69e0000c36781c75414d = L.marker(
+                [45.4767579, 9.1887309],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_6ca2f8845e9216a206c3eb50699cebbd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_4f008221d66d69e0000c36781c75414d.setIcon(icon_6ca2f8845e9216a206c3eb50699cebbd);
+        
+    
+        var popup_04d2f2c225ce53138089db0088991be6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6f852066ff4f9748f27465bd835a3959 = $(`<div id="html_6f852066ff4f9748f27465bd835a3959" style="width: 100.0%; height: 100.0%;">Pacifico<br>Price: €€€<br>Cuisine: Peruvian,  Asian Influences</div>`)[0];
+                popup_04d2f2c225ce53138089db0088991be6.setContent(html_6f852066ff4f9748f27465bd835a3959);
+            
+        
+
+        marker_4f008221d66d69e0000c36781c75414d.bindPopup(popup_04d2f2c225ce53138089db0088991be6)
+        ;
+
+        
+    
+    
+            var marker_0c9a41ed035bed717ff83d77a757d139 = L.marker(
+                [45.4511093, 9.207863300000001],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_cbaed9fe4638afb8617967a5a4fa65dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_0c9a41ed035bed717ff83d77a757d139.setIcon(icon_cbaed9fe4638afb8617967a5a4fa65dd);
+        
+    
+        var popup_429bb70301e296582549e3da1ae24583 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f2ffb98722c236eee4ea32e67ba1dbc = $(`<div id="html_1f2ffb98722c236eee4ea32e67ba1dbc" style="width: 100.0%; height: 100.0%;">Ichikawa<br>Price: €€€<br>Cuisine: Japanese,  Asian</div>`)[0];
+                popup_429bb70301e296582549e3da1ae24583.setContent(html_1f2ffb98722c236eee4ea32e67ba1dbc);
+            
+        
+
+        marker_0c9a41ed035bed717ff83d77a757d139.bindPopup(popup_429bb70301e296582549e3da1ae24583)
+        ;
+
+        
+    
+    
+            var marker_b461606d20d8046e7eca8d2c313dce40 = L.marker(
+                [45.4705811, 9.1927463],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_fece0103f23fc7785895e3ced5f4ad06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b461606d20d8046e7eca8d2c313dce40.setIcon(icon_fece0103f23fc7785895e3ced5f4ad06);
+        
+    
+        var popup_c9909bce584cd621f541e66c5dc969aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce722ed0c416633de89350ff126c1fc1 = $(`<div id="html_ce722ed0c416633de89350ff126c1fc1" style="width: 100.0%; height: 100.0%;">Armani/Ristorante<br>Price: €€€€<br>Cuisine: Italian Contemporary,  Asian Influences</div>`)[0];
+                popup_c9909bce584cd621f541e66c5dc969aa.setContent(html_ce722ed0c416633de89350ff126c1fc1);
+            
+        
+
+        marker_b461606d20d8046e7eca8d2c313dce40.bindPopup(popup_c9909bce584cd621f541e66c5dc969aa)
+        ;
+
+        
+    
+    
+            var marker_95ba6818fb1983bbbf440fe957c66f6b = L.marker(
+                [45.45994779999999, 9.1878899],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_57ca8aa5e38f87d5053ae3518bf7156d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_95ba6818fb1983bbbf440fe957c66f6b.setIcon(icon_57ca8aa5e38f87d5053ae3518bf7156d);
+        
+    
+        var popup_78d7a726a8c540dba38dc592185ddd2a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56b41a5d811b5af9650fa9baba57ee22 = $(`<div id="html_56b41a5d811b5af9650fa9baba57ee22" style="width: 100.0%; height: 100.0%;">Wicky's Innovative Japanese Cuisine<br>Price: €€€<br>Cuisine: Japanese,  Asian Contemporary</div>`)[0];
+                popup_78d7a726a8c540dba38dc592185ddd2a.setContent(html_56b41a5d811b5af9650fa9baba57ee22);
+            
+        
+
+        marker_95ba6818fb1983bbbf440fe957c66f6b.bindPopup(popup_78d7a726a8c540dba38dc592185ddd2a)
+        ;
+
+        
+    
+    
+            var marker_85c5daac85a530828a77808a62e2b9f2 = L.marker(
+                [45.4927955, 9.1988306],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_d65ff4942de0ee4e563333cea8c79216 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_85c5daac85a530828a77808a62e2b9f2.setIcon(icon_d65ff4942de0ee4e563333cea8c79216);
+        
+    
+        var popup_b0dfa704264fbec75b6921439db738c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6cfbbd252bebbfddb10feca3f7b8c8ca = $(`<div id="html_6cfbbd252bebbfddb10feca3f7b8c8ca" style="width: 100.0%; height: 100.0%;">Finger's Garden<br>Price: €€€<br>Cuisine: Fusion,  Asian Contemporary</div>`)[0];
+                popup_b0dfa704264fbec75b6921439db738c3.setContent(html_6cfbbd252bebbfddb10feca3f7b8c8ca);
+            
+        
+
+        marker_85c5daac85a530828a77808a62e2b9f2.bindPopup(popup_b0dfa704264fbec75b6921439db738c3)
+        ;
+
+        
+    
+    
+            var marker_d385e445e15d9c81f2245c4acd7167f2 = L.marker(
+                [45.4675841, 9.2084546],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_5893475c621321e806c947a5c4dc8324 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d385e445e15d9c81f2245c4acd7167f2.setIcon(icon_5893475c621321e806c947a5c4dc8324);
+        
+    
+        var popup_1690f38fa1eda1c70e0a8a010a3b9461 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d35ba12e92b1d887020ab2feff3564c1 = $(`<div id="html_d35ba12e92b1d887020ab2feff3564c1" style="width: 100.0%; height: 100.0%;">Gong<br>Price: €€€€<br>Cuisine: Chinese,  Asian Contemporary</div>`)[0];
+                popup_1690f38fa1eda1c70e0a8a010a3b9461.setContent(html_d35ba12e92b1d887020ab2feff3564c1);
+            
+        
+
+        marker_d385e445e15d9c81f2245c4acd7167f2.bindPopup(popup_1690f38fa1eda1c70e0a8a010a3b9461)
+        ;
+
+        
+    
+    
+            var marker_67859dd7d441b2274423f0df99463918 = L.marker(
+                [45.5322792, 9.6737737],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_b69554c8712ac2301a57edc42c0bc9bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_67859dd7d441b2274423f0df99463918.setIcon(icon_b69554c8712ac2301a57edc42c0bc9bf);
+        
+    
+        var popup_88fb6e87f5b85a11d9d7018cf36f1622 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6ebdc89a83cacd2c1910ebba322120c = $(`<div id="html_a6ebdc89a83cacd2c1910ebba322120c" style="width: 100.0%; height: 100.0%;">Locanda Viola<br>Price: €€€<br>Cuisine: Italian Contemporary,  Asian Influences</div>`)[0];
+                popup_88fb6e87f5b85a11d9d7018cf36f1622.setContent(html_a6ebdc89a83cacd2c1910ebba322120c);
+            
+        
+
+        marker_67859dd7d441b2274423f0df99463918.bindPopup(popup_88fb6e87f5b85a11d9d7018cf36f1622)
+        ;
+
+        
+    
+    
+            var marker_f57cebe1135a7039d72444d12faebf55 = L.marker(
+                [45.45821979999999, 9.1762594],
+                {}
+            ).addTo(map_e77d79a4b049970c6dbe29ddf5f139af);
+        
+    
+            var icon_31179051d99381dbbb2d88236b586955 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f57cebe1135a7039d72444d12faebf55.setIcon(icon_31179051d99381dbbb2d88236b586955);
+        
+    
+        var popup_6afe64b3ca92f7721e3f5a2ecff4dec4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a128dd92144d0b344269482441561c30 = $(`<div id="html_a128dd92144d0b344269482441561c30" style="width: 100.0%; height: 100.0%;">Bentōteca<br>Price: €€€<br>Cuisine: Fusion,  Asian Contemporary</div>`)[0];
+                popup_6afe64b3ca92f7721e3f5a2ecff4dec4.setContent(html_a128dd92144d0b344269482441561c30);
+            
+        
+
+        marker_f57cebe1135a7039d72444d12faebf55.bindPopup(popup_6afe64b3ca92f7721e3f5a2ecff4dec4)
+        ;
+
+        
+    
+</script>
+</html>
