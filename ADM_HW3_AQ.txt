@@ -1,0 +1,150 @@
+﻿def manhattan(robot, package):
+    return abs(robot[0] - package[0]) + abs(robot[1] - package[1])
+
+
+def leftmost_and_downmost(packages):
+    return the smallest package[0] and package[1] out of any of the packages
+int t = input()
+int n = input()
+
+
+for i in range(t):
+    solution = []
+    packages = []
+    for j in range(n):
+        packages.append(input().split())
+    robot = (0,0)
+    leftmost, downmost = leftmost_and_downmost(packages)
+    while(true):
+        robot_up = (robot[0], robot[1] +1)
+        robot_right = (robot[0] + 1, robot[1])
+        up_distances = [manhattan(robot_up, package) for package in packages]
+        right_distances = [manhattan(robot_right, package) for package in packages]
+        closest1, closest2 = min(right_distances), min(up_distances)
+        if closest1 <= closest2:
+            solution.append('R')
+            robot = robot_right
+        else:
+            solution.append('U')
+            robot = robot_up
+        if robot in packages:
+            packages.delete(robot)
+        if robot[0] > leftmost or robot[1] > downmost:
+            print('NO')
+            continue
+    if packages.isempty():
+        print('YES')
+        print(solution)
+    else:
+        print('NO')
+
+
+
+
+
+
+The algorithm is greedy and works on the principle of informed search, choosing at each point the best possible next successor state based on the value of a provided heuristic. Since the robot in the problem can only move on one axis at a time (and not diagonally), the heuristic used is the Manhattan distance between the robot and the remaining packages at a given time. For the current position of the robot, we consider the next potential actions, moving up or right, and for each we find how close the robot would be to the other packages after moving. Taking the minimum distance between the robot moving up/right to any of the packages using the heuristic, we choose the move that minimizes this distance. Since the comparison of these distances is done with a <= operator, when it makes no difference to the heuristic which move we take, the algorithm prefers to move right, rendering the lexicographically smallest option. There is also another helper function that finds the leftmost and downmost coordinates (which may be for the same package) out of the starting list of packages. If we find that the robot has moved to the right of or above these coordinates, respectively, then, to collect them it would need to go left or down, which isn’t allowed - so the problem isn’t solvable. For example:
+
+
+x
+Rx
+
+
+In this case, the leftmost and downmost values are both 0. If the robot collects the top package, it will be at position 1 along the Y axis, moving above the lowest package, and vice versa, if it collects the right package, it will be at position 1 along the X axis, moving right of the leftmost package. In both cases, it cannot go back, so the condition is voided and the case unsolvable.
+
+
+The correctness of the algorithm can be argued inductively. Given the movement restrictions (only one square to the right or above), and the condition for lexicographic ordering, there is always exactly one optimal move in every step. In cases where a certain package is equally near no matter which move is made, or even when each move brings us equally close to two different packages, the condition to prefer ‘R’ moves acts as the tiebreaker. And given the definition of the problem and the crucial detail of “not being able to go back”, each move that brings us a step close to the nearest package, brings the robot an equal step closer to every other package - unless the packages could not all be collected given these conditions, which is routinely checked after every move. If we had the ability to also move left as well as right, for example, choosing left instead of right would enable suboptimal detours. After n optimally chosen steps, the algorithm will also optimally choose the n+1th one. 
+
+
+The code has three nested loops that run for up to t * len(solution) * n executions - for each test case (t), in every step (len(solution)), we need to calculate the heuristic for every package (n), so the algorithm has a quadratic growth rate for each test case, giving O (n^2), or O(t*n^2) for all test cases.
+
+
+ChatGPT’s response when asked to evaluate the complexity was: 
+________________
+Let's analyze the given pseudocode and determine its Big O time complexity step by step.
+Key Functions:
+1. manhattan(robot, package):
+   * The function computes the Manhattan distance between two points in a 2D grid, which involves two subtraction operations and two absolute value calculations.
+   * Time complexity: O(1).
+2. leftmost_and_downmost(packages):
+   * This function finds the package with the smallest package[0] and the smallest package[1]. It requires scanning through the list of packages once to determine the minimum values for both dimensions.
+   * Time complexity: O(n), where n is the number of packages.
+Main Loop:
+* The outer loop runs t times (for i in range(t)), where t is the number of test cases.
+* For each test case:
+   * We initialize packages, target, score, and robot variables.
+   * The inner while(score != target) loop runs until the robot has visited all packages (score == target).
+   * Inside the while loop:
+      1. Manhattan distances are calculated for each package in the up_distances and right_distances lists. These are computed using the manhattan function, and both lists involve scanning through all n packages:
+         * Time complexity: O(n) for both up_distances and right_distances.
+      2. Finding the minimum distances (min(right_distances) and min(up_distances)) involves scanning through the lists of distances.
+         * Time complexity: O(n) for each minimum operation.
+      3. Updating the robot position and checking whether the robot has reached a package:
+         * Checking if robot in packages takes O(n) because it may require scanning through the list of packages.
+         * Removing the package involves deleting it from the list, which also takes O(n) since lists are not optimized for deletion in the middle.
+      4. Leftmost and Downmost Check (l, r = leftmost_and_downmost(packages)):
+         * This operation also requires scanning through the packages list to find the minimum values, which takes O(n).
+* Termination Condition: The while loop runs at most n times (since score increases by 1 each time the robot picks up a package).
+Total Time Complexity:
+For each test case:
+* Each iteration of the while(score != target) loop involves:
+   * O(n) for computing the distances.
+   * O(n) for finding the minimum distances.
+   * O(n) for checking and updating the robot's position in the list of packages.
+   * O(n) for the leftmost and downmost check.
+Thus, the inner loop has a time complexity of O(n) for each of the n steps.
+Overall Complexity:
+* The inner loop runs up to n times for each test case, and for each iteration, the operations inside the loop take O(n) time.
+* Therefore, the time complexity for one test case is O(n²).
+* Since the outer loop runs t times (for each test case), the total time complexity is O(t * n²).
+Final Answer:
+The overall time complexity of the given pseudocode is O(t * n²), where:
+* t is the number of test cases.
+* n is the number of packages in each test case.
+…Which is the correct answer and in line with our analysis.
+
+
+In the case where we can move in left, right, up, and down, if the lexicographically shortest path bias holds, the robot will, given all else being equal, prefer to move: Down, Left, Right, Up. As described above, this ability to go back and forth (left/right, up/down) introduces the potential of detours, such as in this example starting position:
+
+
+
+
+
+
+
+
+
+
+
+
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+xooooo
+Roooox
+
+
+where ‘x’ denotes a package, ‘R’ is the robot, and ‘o’ are empty squares.
+
+
+Greedy solution:
+
+
+UUUUUUUUUUUUDDDDDDDDDDDDRRRRR
+
+
+Optimal solution:
+
+
+RRRRRLLLLLUUUUUUUUUUUU
+
+
+Because the robot is initially closer to the bottom package in the left stack (Manhattan distance of 1 instead of 5), it will move towards it, proceeding to collect all the packages that are lined up upwards. However, by the time the robot has made it to the top, to collect the last package, it will need to come all the way down, then proceed right. The greedy solution given above has 29 moves, but the optimal solution has only 22 - collecting first the single package on the right, then going for the left row. Thus, the algorithm is proven suboptimal via a counter-example.
