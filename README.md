@@ -16,3 +16,4 @@
 - `michelin_restaurants_map.html`: This Html map contains an interactive visualization of all the restaurants in the dataset, done using folium
 - `top_k_map.html`: This is a map that contains only the top k restaurants obtained with the query function of part 3
 - `Pages folder`: For readability this folder contains all the 100 folders produced by the code in part 1 of the HW
+- `ADM_HW3_AQ.txt`: The solution for the Algorithmic Question
